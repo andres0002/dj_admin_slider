@@ -1,0 +1,20 @@
+{% extends 'base_crud_slider.html' %}
+
+{% block title_form_slider %}
+    <i class="fa fa-eye page-header-icon"></i>&nbsp;Visualizar Slider
+{% endblock %}
+
+{% block scripts_crud %}
+    <script>
+        $('#form').find("input[type='text'], input[type='number'], input[type='file'], select, textarea").each(function (index, element)
+        {
+            $(element).prop('readonly', true);
+            $(element).prop('disabled', true);
+        });
+
+        $('#form').find("select").each(function (index, element)
+        {
+            $(element).attr('style', 'pointer-events: none;');
+        });
+    </script>
+{% endblock %}

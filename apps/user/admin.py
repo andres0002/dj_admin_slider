@@ -16,6 +16,8 @@ class UserAdmin(ImportExportModelAdmin, admin.ModelAdmin):
 	search_fields = ("name", "last_name", "usuid", "rol")
 	list_display = ("name", "last_name", "usuid", "rol")
 	list_filter = ("usuid", "rol")
+	readonly_fields = ('created_at', 'update_at')
+	ordering = ['name']
 	resource_class = UserResource
 
 admin.site.register(UserApp, UserAdmin)

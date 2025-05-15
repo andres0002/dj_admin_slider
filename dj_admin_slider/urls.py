@@ -30,4 +30,6 @@ urlpatterns = [
     path('home_slider/', include(('apps.slider.urls', 'home_slider')))
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Media files.
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

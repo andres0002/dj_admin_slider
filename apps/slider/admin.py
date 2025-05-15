@@ -13,9 +13,9 @@ class SliderResource(resources.ModelResource):
 		model = Slider
 
 class SliderAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-	search_fields = ("slug", "image", "create_date", "update_date")
-	list_display = ("slug", "image", "create_date", "update_date")
-	list_filter = ( "create_date", "update_date")
+	search_fields = ("slug", "image", "created_at", "updated_at")
+	list_display = ("slug", "image", "created_at", "updated_at")
+	list_filter = ( "created_at", "updated_at")
 	resource_class = SliderResource
 
 admin.site.register(Slider, SliderAdmin)

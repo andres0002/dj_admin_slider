@@ -18,6 +18,8 @@ class UserApp(models.Model):
     last_name = models.CharField(max_length=30)
     rol = models.CharField(max_length=20, choices=ROL_CHOICES)
     usuid = models.OneToOneField(User, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    update_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):  # __unicode__
         return self.name
